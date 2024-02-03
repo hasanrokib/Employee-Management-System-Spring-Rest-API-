@@ -1,0 +1,36 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    password: semo2023
+    url: jdbc:mysql://localhost:3306/employee
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: test
+springdoc:
+  api-docs:
+    path: /api-docs
+---
+spring:
+  config:
+    activate:
+      on-profile: 'prod'
+  message:  "welcome to the prod "
+
+---
+
+  spring:
+    config:
+      activate:
+        on-profile: 'dev'
+    message: "welcome to the dev "
+---
+spring:
+  config:
+    activate:
+      on-profile: 'test'
+  message:  "welcome to the test "
+---
